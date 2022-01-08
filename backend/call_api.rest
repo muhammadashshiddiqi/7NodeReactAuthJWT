@@ -1,0 +1,40 @@
+
+### //register user
+POST http://localhost:4000/users
+Content-Type: application/json
+
+{
+    "nama": "admin",
+    "email": "sidiq@admin.com",
+    "password": "12345",
+    "confPassword": "12345"
+}
+
+
+
+### //login user dengan jwt (json web token)
+POST http://localhost:4000/login
+Content-Type: application/json
+
+{
+    "email": "admin@gmail.com",
+    "password": "1234"
+}
+
+
+
+### //get user dengan verify token
+GET http://localhost:4000/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY0MDYxNjQ5MywiZXhwIjoxNjQwNjE2NTA4fQ.JvPOYVVCA3xHrDKl1zZSvuan-Vfwn07YLr3nI6nAILA
+
+
+
+
+### //ngerefresh token baru, jika yang lama expired (sesudah login)
+GET http://localhost:4000/token
+
+
+
+
+### //logout
+DELETE http://localhost:4000/logout
